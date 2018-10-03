@@ -18,5 +18,3 @@ jobs:
           name: build app on windows node
           script:
             - Get-Process
-            - docker images
-            - docker ps
