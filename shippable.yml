@@ -1,7 +1,7 @@
 resources:
   - name: pythonturtle_repo
     type: gitRepo
-    integration: gh_ric03uec
+    integration: gh-ric03uec
     pointer:
       sourceName: ric03uec/PythonTurtle
       branch: master
