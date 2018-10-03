@@ -20,9 +20,7 @@ jobs:
           runtime:
             options:
               env:
-                - PYTHON_PATH: "C:\Users\Administrator\AppData\Local\Programs\Python\Python37"
-                - IMG_OUT: "w2k16aspnetcore_dd_img"
-                - RES_REPO: "w2k16aspnetcore_dd_repo"
+                - PYTHON_PATH: 'C:\Users\Administrator\AppData\Local\Programs\Python\Python37'
           script:
             - Get-Process
             - pushd $(shipctl get_resource_state "pythonturtle_repo")
