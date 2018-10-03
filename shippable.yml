@@ -1,3 +1,11 @@
+resources:
+  - name: pythonturtle_repo
+    type: gitRepo
+    integration: gh_ric03uec
+    pointer:
+      sourceName: ric03uec/PythonTurtle
+      branch: master
+
  ## Job description:
 jobs:
   - name: windows_build
@@ -5,7 +13,7 @@ jobs:
     runtime:
       nodePool: cus_win16
     steps:
-      - IN: myGitRepo
+      - IN: pythonturtle_repo
       - TASK:
           name: build app on windows node
           script:
