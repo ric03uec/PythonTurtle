@@ -25,8 +25,10 @@ jobs:
             - Get-Process
             - pushd $(shipctl get_resource_state "pythonturtle_repo")
             - ls
+            - Get-ChildItem Env:Path | format-list
             - choco install -y python --version 3.6.3
-            - $env:Path="$env:Path;C:\Users\Administrator\AppData\Local\Programs\Python\Python37;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\Scripts"
-            - Get-ChildItem Env:PATH | format-list
+            #- $env:Path="$env:Path;C:\Users\Administrator\AppData\Local\Programs\Python\Python37;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\Scripts"
+            - Get-ChildItem Env:Path | format-list
+            - python --version
             - 'C:\Users\Administrator\AppData\Local\Programs\Python\Python37\python.exe -m pip install PyInstaller wxPython'
               #- python.exe setup.py clean bundle
