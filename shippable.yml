@@ -26,6 +26,6 @@ jobs:
             - pushd $(shipctl get_resource_state "pythonturtle_repo")
             - ls
             - choco install -y python --version 3.6.3
-            - $env:path="$env:Path;C:\Users\Administrator\AppData\Local\Programs\Python\Python37;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\Scripts"
+            - $env:Path="$env:Path;C:\Users\Administrator\AppData\Local\Programs\Python\Python37;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\Scripts"
             - python -m pip install PyInstaller wxPython
             - python setup.py clean bundle
