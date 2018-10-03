@@ -1,0 +1,14 @@
+ ## Job description:
+jobs:
+  - name: windows_build
+    type: runSh
+    runtime:
+      nodePool: cus_win16
+    steps:
+      - IN: myGitRepo
+      - TASK:
+          name: build app on windows node
+          script:
+            - Get-Process
+            - docker images
+            - docker ps
