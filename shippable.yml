@@ -17,9 +17,15 @@ jobs:
       - IN: pythonturtle_repo
       - TASK:
           name: build app on windows node
+          runtime:
+            options:
+              env:
+                - PYTHON_PATH: "C:\Users\Administrator\AppData\Local\Programs\Python\Python37"
+                - IMG_OUT: "w2k16aspnetcore_dd_img"
+                - RES_REPO: "w2k16aspnetcore_dd_repo"
           script:
             - Get-Process
             - pushd $(shipctl get_resource_state "pythonturtle_repo")
-            - ls
-            - %PYTHON%\\python.exe -m pip install PyInstaller wxPython
-            - %PYTHON%\\python.exe setup.py clean bundle
+            - wget -OutFile python.exe -Uri "https://www.python.org/ftp/python/3.7.0/python-3.7.0-amd64.exe"
+            - $env:PYTHON_PATH\python.exe -m pip install PyInstaller wxPython
+            - $env:PYTHON_PATH\python.exe setup.py clean bundle
