@@ -16,12 +16,11 @@ jobs:
     steps:
       - IN: pythonturtle_repo
       - TASK:
-          name: build app on windows node
+          name: build PythonTurtle on windows node
           script:
+            - systeminfo
             - Get-Process
             - pushd $(shipctl get_resource_state "pythonturtle_repo")
-              #- choco install -y python --version 3.6.3
-            - Get-ChildItem Env:Path | format-list
             - python --version
             - python -m pip install PyInstaller wxPython
             - python setup.py clean bundle
