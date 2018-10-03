@@ -11,7 +11,7 @@ jobs:
   - name: windows_build
     type: runSh
     runtime:
-      nodePool: cus_win16
+      nodePool: dyn_win16
     steps:
       - IN: pythonturtle_repo
       - TASK:
