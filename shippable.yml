@@ -12,7 +12,7 @@ jobs:
     type: runSh
     runtime:
       nodePool: dyn_win16
-      container: false
+      #container: false
     steps:
       - IN: pythonturtle_repo
       - TASK:
