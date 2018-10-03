@@ -18,3 +18,6 @@ jobs:
           name: build app on windows node
           script:
             - Get-Process
+            - $repo_path = iex $(shipctl get_resource_state "pythonturtle_repo")
+            - Push-Location $repo_path
+            - ls
