@@ -24,6 +24,7 @@ jobs:
           script:
             - Get-Process
             - pushd $(shipctl get_resource_state "pythonturtle_repo")
-            - wget -OutFile python.exe -Uri "https://www.python.org/ftp/python/3.7.0/python-3.7.0-amd64.exe"
+            - choco install -y python --version 3.6.3
+            - Get-ChildItem Env:
             - $env:PYTHON_PATH\python.exe -m pip install PyInstaller wxPython
             - $env:PYTHON_PATH\python.exe setup.py clean bundle
