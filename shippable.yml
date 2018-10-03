@@ -12,12 +12,14 @@ jobs:
     type: runSh
     runtime:
       nodePool: dyn_win16
+      container: false
     steps:
       - IN: pythonturtle_repo
       - TASK:
           name: build app on windows node
           script:
             - Get-Process
-            - $repo_path = iex $(shipctl get_resource_state "pythonturtle_repo")
-            - Push-Location $repo_path
+            - pushd $(shipctl get_resource_state "pythonturtle_repo")
             - ls
+            - %PYTHON%\\python.exe -m pip install PyInstaller wxPython
+            - %PYTHON%\\python.exe setup.py clean bundle
