@@ -18,17 +18,12 @@ jobs:
       - IN: pythonturtle_repo
       - TASK:
           name: build PythonTurtle on windows node
-          runtime:
-              options:
-                env:
-                  - PYTHON3_EXEC: 'C:\Python36\python.exe'
           script:
             - systeminfo
             - Get-Process
-            - pushd $(shipctl get_resource_state "pythonturtle_repo")
             - python --version
+            - pushd $(shipctl get_resource_state "pythonturtle_repo")
             - choco install -y python --version 3.6.3
             - 'C:\Python36\python.exe --version'
             - 'C:\Python36\python.exe -m pip install PyInstaller wxPython'
             - 'C:\Python36\python.exe  setup.py clean bundle'
-            #- Start-Sleep 600
