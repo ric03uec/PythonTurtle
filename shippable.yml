@@ -28,6 +28,7 @@ jobs:
             - 'C:\Python36\python.exe -m pip install PyInstaller wxPython'
             - 'C:\Python36\python.exe  setup.py clean bundle'
 
+  ############ Not part for original spec, can be commented out #############
   - name: push_artifacts
     type: runSh
     allowPublicAccess: true
