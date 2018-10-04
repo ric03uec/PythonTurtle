@@ -24,6 +24,7 @@ jobs:
             - pushd $(shipctl get_resource_state "pythonturtle_repo")
             - python --version
             - choco install -y python --version 3.6.3
-            - python3 --version
+            - Start-Sleep 600
+              #- python3 --version
             - python -m pip install PyInstaller wxPython
             - python setup.py clean bundle
