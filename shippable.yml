@@ -27,3 +27,15 @@ jobs:
             - 'C:\Python36\python.exe --version'
             - 'C:\Python36\python.exe -m pip install PyInstaller wxPython'
             - 'C:\Python36\python.exe  setup.py clean bundle'
+
+  - name: push_artifacts
+    type: runSh
+    allowPublicAccess: true
+    runtime:
+      nodePool: dyn_win16
+    steps:
+      - IN: windows_build
+      - TASK:
+          name: push artifacts somewhere
+          script:
+            - systeminfo
